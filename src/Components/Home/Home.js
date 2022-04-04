@@ -1,9 +1,31 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Home.css'
 
-const Home = () => {
+const Home = (props) => {
+    const {name,ratngs,about} = props.review
+    const navigate = useNavigate
+    const showReviews =()=>{
+    const path =`/reviews/`;
+    navigate(path);
+    }
     return (
-        <div>
-            <h1>This is home</h1>
+        <div className='home'>
+            <div>
+            <h1 className='shoe'>Chose Your Favorite Shoe... <br />
+            <h1 className='dsign'>Perfect Dsign For Man And Women</h1>
+
+            </h1>
+            <p>Wanna get best shoe ? You are in the right place. Trust on us to get best products . <br />
+                The perfect size and color for woman as well as man. Quality is much more better...
+            </p>
+            <h4>Customer Reviews {ratngs}</h4>
+            <button onClick={showReviews} className='review-btn'>See All Reviews</button>
+            </div>
+            <div>
+                <img src="https://pngimg.com/uploads/running_shoes/running_shoes_PNG5816.png" alt="" />
+            </div>
+            
         </div>
     );
 };

@@ -1,0 +1,23 @@
+
+
+.home{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.home img{
+    width: 70%;
+}
+
+.shoe{
+    color: cadetblue;
+}
+.dsign{
+    color: black;
+}
+
+.review-btn{
+    padding: 10px;
+    background-color: cadetblue;
+    border-radius: 10px;
+}
