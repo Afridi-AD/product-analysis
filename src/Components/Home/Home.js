@@ -1,10 +1,10 @@
-import React from 'react';
+
 import { useNavigate } from 'react-router-dom';
 import './Home.css'
 
-const Home = (props) => {
-    const {name,ratngs,about} = props.review
-    const navigate = useNavigate
+const Home = () => {
+    
+    const navigate = useNavigate()
     const showReviews =()=>{
     const path =`/reviews/`;
     navigate(path);
@@ -19,8 +19,8 @@ const Home = (props) => {
             <p>Wanna get best shoe ? You are in the right place. Trust on us to get best products . <br />
                 The perfect size and color for woman as well as man. Quality is much more better...
             </p>
-            <h4>Customer Reviews {ratngs}</h4>
-            <button onClick={showReviews} className='review-btn'>See All Reviews</button>
+            <h4>Customer Reviews</h4>
+            <button onClick={()=>navigate('/reviews')} className='review-btn'>See All Reviews</button>
             </div>
             <div>
                 <img src="https://pngimg.com/uploads/running_shoes/running_shoes_PNG5816.png" alt="" />
