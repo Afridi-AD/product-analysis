@@ -31,7 +31,7 @@ const Home = () => {
                 The perfect size and color for woman as well as man. Quality is much more better...
             </p>
             
-            <button onClick={()=>navigate('/reviews')} className='review-btn'>See All Reviews</button>
+            
             </div>
             
                 <div>
@@ -50,6 +50,7 @@ const Home = () => {
                 cReview={cReview}
                 ></Creview>)
             }
+            <button onClick={()=>navigate('/reviews')} className='review-btn'>See All Reviews</button>
             </div>
             
 
