@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bar, BarChart, CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
+import { Area, AreaChart, Bar, BarChart, CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
 import './Dashboard.css'
 
 const Dashbord = () => {
@@ -42,43 +42,71 @@ const Dashbord = () => {
         }
     ]
 
-    const bardata = [
-        {
-          "name": "Page A",
-          "price": 4000,
-          "pv": 2400
-        },
-        {
-          "name": "Page B",
-          "price": 3000,
-          "pv": 1398
-        },
-        {
-          "name": "Page C",
-          "price": 2000,
-          "pv": 9800
-        },
-        {
-          "name": "Page D",
-          "price": 2780,
-          "pv": 3908
-        },
-        {
-          "name": "Page E",
-          "price": 1890,
-          "pv": 4800
-        },
-        {
-          "name": "Page F",
-          "price": 2390,
-          "pv": 3800
-        },
-        {
-          "name": "Page G",
-          "price": 3490,
-          "pv": 4300
-        }
-      ]
+    const rangeData = [
+      {
+        "day": "05-01",
+        "temperature": [
+          -1,
+          10
+        ]
+      },
+      {
+        "day": "05-02",
+        "temperature": [
+          2,
+          15
+        ]
+      },
+      {
+        "day": "05-03",
+        "temperature": [
+          3,
+          12
+        ]
+      },
+      {
+        "day": "05-04",
+        "temperature": [
+          4,
+          12
+        ]
+      },
+      {
+        "day": "05-05",
+        "temperature": [
+          12,
+          16
+        ]
+      },
+      {
+        "day": "05-06",
+        "temperature": [
+          5,
+          16
+        ]
+      },
+      {
+        "day": "05-07",
+        "temperature": [
+          3,
+          12
+        ]
+      },
+      {
+        "day": "05-08",
+        "temperature": [
+          0,
+          8
+        ]
+      },
+      {
+        "day": "05-09",
+        "temperature": [
+          -3,
+          5
+        ]
+      }
+    ]
       
     return (
         <div className='chart'>
@@ -95,16 +123,19 @@ const Dashbord = () => {
 
 
       <div>
-          <BarChart width={300} height={400} bardata={bardata}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey={'name'}></XAxis>
-          <YAxis></YAxis>
-          <Tooltip></Tooltip>
-          <Legend></Legend>
-          <Bar dataKey={'name'} fill={'#8884d9'}></Bar>
-          <Bar dataKey={'pv'} fill='#8884d9'></Bar>
-          <Bar dataKey={'price'} fill='#82ca9d'></Bar>
-          </BarChart>
+      <AreaChart
+  width={730}
+  height={250}
+  data={rangeData}
+  margin={{
+    top: 20, right: 20, bottom: 20, left: 20,
+  }}
+>
+  <XAxis dataKey="day" />
+  <YAxis />
+  <Area dataKey="temperature" stroke="#8884d8" fill="#8884d8" />
+  <Tooltip />
+</AreaChart>
       </div>
 
         </div>
